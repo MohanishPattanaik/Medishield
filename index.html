@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MediShield | Login</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-box">
+      <h1>MediShield Login</h1>
+      <form id="login-form">
+        <label for="regNo">Registration Number</label>
+        <input type="text" id="regNo" placeholder="Enter your Registration Number" required>
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your Password" required>
+        <button type="submit">Login</button>
+      </form>
+      <p id="login-error" class="error-message"></p>
+    </div>
+  </div>
+  <!-- Include auth.js at the bottom to ensure DOM elements are loaded first -->
+  <script src="js/auth.js"></script>
+</body>
+</html>
+

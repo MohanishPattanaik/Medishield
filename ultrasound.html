@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ultrasound</title>
+  <link rel="stylesheet" href="css/medTools.css">
+  <script src="js/Medical tools/ultrasound.js" defer></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <div class="navbar">
+      <h1>Ultrasound</h1>
+      <nav>
+        <a href="tools.html">Back to Tools</a>
+        <a href="index.html">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Section -->
+  <main>
+    <section class="tool-details">
+      <h2>Real-Time Imaging</h2>
+      <button onclick="scanFingerprint()">Scan Fingerprint to Access</button>
+      <div id="ultrasound-output" class="hidden">
+        <h3>Ultrasound Description</h3>
+        <p>The ultrasound tool provides real-time imaging for diagnostic purposes using sound waves.</p>
+        <img src="images/ultrasound-image.png" alt="Ultrasound Output" class="tool-image">
+        <p><b>Output:</b> A sample ultrasound image showcasing diagnostic capabilities.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 MediShield. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

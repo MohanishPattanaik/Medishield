@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MediShield Dashboard</title>
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <script src="js/dashboard.js" defer></script>
+</head>
+<body>
+
+  <!-- Title Bar -->
+  <header>
+    <div class="navbar">
+      <h1>MediShield Dashboard</h1>
+      <nav>
+        <a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs">
+    <span><a href="index.html">Home</a> > Dashboard</span>
+  </div>
+
+  <!-- Main Dashboard Content -->
+  <main>
+    <div class="dashboard-container">
+      
+      <!-- Medical Tools Section -->
+      <div class="section tools">
+        <div class="icon-container">
+          <i class="fas fa-tools"></i>
+        </div>
+        <h2>MEDICAL TOOLS</h2>
+        <p>Access the various medical tools used in healthcare.</p>
+        <button class="access-btn" onclick="redirectToTools()">Access Tools</button>
+      </div>
+
+      <!-- Medical Logs Section -->
+      <div class="section info">
+        <div class="icon-container">
+          <i class="fas fa-clipboard-list"></i>
+        </div>
+        <h2>MEDICAL LOGS</h2>
+        <p>Accessibility Details of Authorized Users.</p>
+        <button class="view-btn" onclick="viewToolFeatures()">View Logs</button>
+      </div>
+      
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="contact-info">
+        <h3>Contact Us</h3>
+        <p>For support, contact: support@medishield.com</p>
+        <p>Phone: +91 8984293414</p>
+      </div>
+      <div class="team-info">
+        <h3>Team Members</h3>
+        <ul>
+          <li>Mohanish Pattanaik - (23BHI10049)</li>
+          <li>Arpit Pattanaik - (23BHI10081)</li>
+          <li>Ankit Pattanaik - (23BHI10069)</li>
+          <li>Anubhab Bhattacharjee - (23BHI10051)</li>
+          <li>Syed Asdaq Nehal - (23BHI10140)</li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <a href="terms.html">Terms of Use</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
+    </div>
+    <p>&copy; 2024 MediShield. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

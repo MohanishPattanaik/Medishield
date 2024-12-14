@@ -1,0 +1,66 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f8fc;
+    color: #2c3e50;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #3cbec9, #2896b5);
+    color: white;
+    padding: 1rem 2rem;
+  }
+  
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1rem;
+  }
+  
+  .tool-details {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .tool-details h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .tool-details button {
+    padding: 0.7rem 1.5rem;
+    background: #3cbec9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .tool-details button:hover {
+    background-color: #2896b5;
+  }
+  
+  .tool-image {
+    margin-top: 1rem;
+    width: 60%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  footer {
+    background: #3cbec9;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+  }
+  
