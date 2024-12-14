@@ -1,43 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MRI Scanner</title>
-  <link rel="stylesheet" href="css/medTools.css">
-  <script src="js/Medical tools/mri.js" defer></script>
-</head>
-<body>
-
-  <!-- Navbar -->
-  <header>
-    <div class="navbar">
-      <h1>MRI Scanner</h1>
-      <nav>
-        <a href="tools.html">Back to Tools</a>
-        <a href="index.html">Logout</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Main Section -->
-  <main>
-    <section class="tool-details">
-      <h2>Perform Detailed Imaging</h2>
-      <button onclick="scanFingerprint()">Scan Fingerprint to Access</button>
-      <div id="mri-output" class="hidden">
-        <h3>MRI Scanner Description</h3>
-        <p>The MRI scanner provides detailed imaging of internal organs using magnetic fields and radio waves.</p>
-        <img src="images/mri-scan.png" alt="MRI Scan" class="tool-image">
-        <p><b>Output:</b> A sample MRI scan output for diagnostic reference.</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MRI Scanner</title>
+    <link rel="stylesheet" href="css/medTools.css" />
+    <script src="js/Medical tools/mri.js" defer></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header>
+      <div class="navbar">
+        <h1>MRI Scanner</h1>
+        <nav>
+          <a href="tools.html">Back to Tools</a>
+          <a href="index.html">Logout</a>
+        </nav>
       </div>
-    </section>
-  </main>
+    </header>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2024 MediShield. All rights reserved.</p>
-  </footer>
+    <!-- Main Section -->
+    <main>
+      <section class="tool-details">
+        <h2>Perform Detailed Imaging</h2>
+        <button id="btn" onclick="scanFingerprint()">
+          Scan Fingerprint to Access
+        </button>
+        <div id="mri-output" class="hidden">
+          <h3>MRI Scanner Description</h3>
+          <p>
+            The MRI scanner provides detailed imaging of internal organs using
+            magnetic fields and radio waves.
+          </p>
+          <img src="images/mri-scan.png" alt="MRI Scan" class="tool-image" />
+          <p>
+            <b>Output:</b> A sample MRI scan output for diagnostic reference.
+          </p>
+        </div>
+      </section>
+    </main>
 
-</body>
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 MediShield. All rights reserved.</p>
+    </footer>
+    <script>
+      const scanFingerprint = async () => {
+        document.getElementById('btn').textContent =
+          'Place your fingerpint for scanning';
+        await fetch('http://localhost:5000/auth', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            tool: 'mri',
+          }),
+        }).then((response) => {
+          console.log('completed');
+
+          if (response.ok) {
+            window.location.href = 'logs.html';
+          }
+        });
+      };
+    </script>
+  </body>
 </html>

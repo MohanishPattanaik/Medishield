@@ -44,6 +44,8 @@
         .getElementById('login-form')
         .addEventListener('submit', function (event) {
           event.preventDefault();
+          document.getElementById('login-error').textContent =
+            'Place your finger on the scanner';
           const reg_no = document.getElementById('reg_no').value;
           console.log(reg_no);
           const password = document.getElementById('password').value;

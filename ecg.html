@@ -1,43 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Electrocardiogram (ECG)</title>
-  <link rel="stylesheet" href="css/medTools.css">
-  <script src="js/Medical tools/ecg.js" defer></script>
-</head>
-<body>
-
-  <!-- Navbar -->
-  <header>
-    <div class="navbar">
-      <h1>Electrocardiogram (ECG)</h1>
-      <nav>
-        <a href="tools.html">Back to Tools</a>
-        <a href="index.html">Logout</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Main Section -->
-  <main>
-    <section class="tool-details">
-      <h2>Securely Monitor Heart Activity</h2>
-      <button onclick="scanFingerprint()">Scan Fingerprint to Access</button>
-      <div id="ecg-output" class="hidden">
-        <h3>ECG Description</h3>
-        <p>The ECG tool records electrical activity of the heart to help diagnose heart conditions.</p>
-        <img src="images/ecg-graph.png" alt="ECG Graph" class="tool-image">
-        <p><b>Output:</b> Below is a sample electrocardiogram generated for diagnostic purposes.</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electrocardiogram (ECG)</title>
+    <link rel="stylesheet" href="css/medTools.css" />
+    <script src="js/Medical tools/ecg.js" defer></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header>
+      <div class="navbar">
+        <h1>Electrocardiogram (ECG)</h1>
+        <nav>
+          <a href="tools.html">Back to Tools</a>
+          <a href="index.html">Logout</a>
+        </nav>
       </div>
-    </section>
-  </main>
+    </header>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2024 MediShield. All rights reserved.</p>
-  </footer>
+    <!-- Main Section -->
+    <main>
+      <section class="tool-details">
+        <h2>Securely Monitor Heart Activity</h2>
+        <button id="btn" onclick="scanFingerprint()">
+          Scan Fingerprint to Access
+        </button>
+        <div id="ecg-output" class="hidden">
+          <h3>ECG Description</h3>
+          <p>
+            The ECG tool records electrical activity of the heart to help
+            diagnose heart conditions.
+          </p>
+          <img src="images/ecg-graph.png" alt="ECG Graph" class="tool-image" />
+          <p>
+            <b>Output:</b> Below is a sample electrocardiogram generated for
+            diagnostic purposes.
+          </p>
+        </div>
+      </section>
+    </main>
 
-</body>
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 MediShield. All rights reserved.</p>
+    </footer>
+    <script>
+      const scanFingerprint = async () => {
+        document.getElementById('btn').textContent =
+          'Place your fingerpint for scanning';
+        await fetch('http://localhost:5000/auth', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            tool: 'ecg',
+          }),
+        }).then((response) => {
+          console.log('completed');
+          
+          if (response.ok) {
+            window.location.href = 'logs.html';
+          }
+        });
+      };
+    </script>
+  </body>
 </html>
