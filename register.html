@@ -9,7 +9,7 @@
   <body>
     <div class="login-container">
       <div class="login-box">
-        <h1>MediShield Login</h1>
+        <h1>MediShield Register</h1>
         <form id="login-form">
           <label for="reg_no">Registration Number</label>
           <input
@@ -25,23 +25,31 @@
             placeholder="Enter your Password"
             required
           />
-          <button type="submit">Login</button> dont have an account?
-          <a href="register.html">Register</a>
+          <label for="username">Username</label>
+          <input
+            type="text"
+            id="username"
+            placeholder="Enter your username"
+            required
+          />
+          <button type="submit">Login</button> already have an account?
+          <a href="index.html">Login</a>
         </form>
         <p id="login-error" class="error-message"></p>
       </div>
     </div>
     <!-- Include auth.js at the bottom to ensure DOM elements are loaded first -->
-    <!-- <script src="js/auth.js"></script> -->
     <script>
       document
         .getElementById('login-form')
         .addEventListener('submit', function (event) {
           event.preventDefault();
           const reg_no = document.getElementById('reg_no').value;
+          console.log(reg_no);
           const password = document.getElementById('password').value;
+          const username = document.getElementById('username').value;
 
-          fetch('http://localhost:5000/login', {
+          fetch('http://localhost:5000/register', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -49,12 +57,15 @@
             body: JSON.stringify({
               reg_no,
               password,
+              username,
             }),
           }).then((response) => {
             if (response.ok) {
-              window.location.href = 'dashboard.html';
+              window.location.href = 'index.html';
+            } else {
+              document.getElementById('login-error').textContent =
+                'Invalid Registration Number or Password';
             }
-            throw new Error('Invalid Registration Number or Password');
           });
         });
     </script>
